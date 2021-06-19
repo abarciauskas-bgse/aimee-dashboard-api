@@ -30,11 +30,11 @@ jobs:
 
       - uses: franzbischoff/replace_envs@v1
         env:
-          PROJECT_NAME: 'aimee-demo'
-          DATA_BUCKET: 'aimee-dashboard-datasets'
+          PROJECT_NAME: 'template-project'
+          DATA_BUCKET: 'bucket-does-not-exist'
           STAGE: ${{ steps.extract_branch.outputs.branch }}
           VECTOR_TILESERVER_URL: ''
-          TITILER_SERVER_URL: 'https://h9su0upami.execute-api.us-east-1.amazonaws.com'
+          TITILER_SERVER_URL: ''
         with:
           from_file: 'stack/config.yml.example'
           to_file: 'stack/config.yml'
@@ -49,6 +49,9 @@ jobs:
 
       - name: Install AWS CDK, pip requirements and run CDK bootstrap
         run: ./install.sh
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Deploy the resources to AWS
         run: ./deploy.sh
