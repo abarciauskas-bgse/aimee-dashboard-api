@@ -30,8 +30,8 @@ jobs:
 
       - uses: franzbischoff/replace_envs@v1
         env:
-          PROJECT_NAME: 'template-project'
-          DATA_BUCKET: 'bucket-does-not-exist'
+          PROJECT_NAME: 'aimee'
+          DATA_BUCKET: 'aimee-dashboard-datasets'
           STAGE: ${{ steps.extract_branch.outputs.branch }}
           VECTOR_TILESERVER_URL: ''
           TITILER_SERVER_URL: ''
