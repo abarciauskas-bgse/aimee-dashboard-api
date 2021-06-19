@@ -50,8 +50,8 @@ jobs:
       - name: Install AWS CDK, pip requirements and run CDK bootstrap
         run: ./install.sh
         env:
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT_ID }}
+          CDK_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Deploy the resources to AWS
         run: ./deploy.sh
