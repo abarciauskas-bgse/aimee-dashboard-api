@@ -33,8 +33,8 @@ jobs:
           PROJECT_NAME: 'aimee'
           DATA_BUCKET: 'aimee-dashboard-datasets'
           STAGE: ${{ steps.extract_branch.outputs.branch }}
-          VECTOR_TILESERVER_URL: ''
-          TITILER_SERVER_URL: ''
+          VECTOR_TILESERVER_URL: 'not_a_url'
+          TITILER_SERVER_URL: 'not_a_url'
         with:
           from_file: 'stack/config.yml.example'
           to_file: 'stack/config.yml'
