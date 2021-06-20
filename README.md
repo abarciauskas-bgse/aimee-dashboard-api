@@ -1,4 +1,6 @@
-# dashboard-api-starter
+# aimee-dashboard-api
+
+For testing!
 
 A lightweight API for Earthdata.
 
