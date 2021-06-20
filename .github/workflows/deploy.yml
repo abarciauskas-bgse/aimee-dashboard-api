@@ -34,7 +34,7 @@ jobs:
           DATA_BUCKET: 'aimee-dashboard-datasets'
           STAGE: ${{ steps.extract_branch.outputs.branch }}
           VECTOR_TILESERVER_URL: 'not_a_url'
-          TITILER_SERVER_URL: 'not_a_url'
+          TITILER_SERVER_URL: 'https://h9su0upami.execute-api.us-east-1.amazonaws.com'
         with:
           from_file: 'stack/config.yml.example'
           to_file: 'stack/config.yml'
